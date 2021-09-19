@@ -8,6 +8,13 @@ class Busquedas{
     constructor(){
         // Leer la base de datos solo si existe
     }
+    get paramMapbox(){
+        return{
+            'access_token': 'pk.eyJ1IjoidmV0ZXJhbm8yMjIiLCJhIjoiY2t0cmxkaGs3MGxncTJxbDV1ZmRyeWxrMCJ9.0CGiSOcZo0tJmKmk6SVrSw',
+            'limit': 5,
+            'language': 'es'
+        }
+    }
 
     async ciudad( lugar = ''){
 
@@ -15,11 +22,7 @@ class Busquedas{
             // realizar peticion http
             const instance = axios.create({
                 baseURL: `https://api.mapbox.com/geocoding/v5/mapbox.places/${lugar}.json`,
-                params:{
-                    'access_token': 'pk.eyJ1IjoidmV0ZXJhbm8yMjIiLCJhIjoiY2t0cmxkaGs3MGxncTJxbDV1ZmRyeWxrMCJ9.0CGiSOcZo0tJmKmk6SVrSw',
-                    'limit': 5,
-                    'language': 'es'
-                }
+                params: this.paramMapbox
             });
 
             const resp = await instance.get();
