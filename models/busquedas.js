@@ -1,8 +1,6 @@
 const axios = require('axios');
 
 
-
-
 class Busquedas{
     
     historial = ['Madrid', 'Guadalajara', 'Singapur'];
@@ -15,20 +13,21 @@ class Busquedas{
 
         try{
             // realizar peticion http
-            const istance = axios.create({
+            const instance = axios.create({
                 baseURL: `https://api.mapbox.com/geocoding/v5/mapbox.places/${lugar}.json`,
                 params:{
-                    'access-token': 'pk.eyJ1IjoidmV0ZXJhbm8yMjIiLCJhIjoiY2t0cmxkaGs3MGxncTJxbDV1ZmRyeWxrMCJ9.0CGiSOcZo0tJmKmk6SVrSw',
+                    'access_token': 'pk.eyJ1IjoidmV0ZXJhbm8yMjIiLCJhIjoiY2t0cmxkaGs3MGxncTJxbDV1ZmRyeWxrMCJ9.0CGiSOcZo0tJmKmk6SVrSw',
                     'limit': 5,
                     'language': 'es'
                 }
             });
 
-            const resp = await intance.get();
+            const resp = await instance.get();
             console.log(resp.data);
 
 
-            return [];
+            return []
+
         }catch (error){
             return [];
         }
