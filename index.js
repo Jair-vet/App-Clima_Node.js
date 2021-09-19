@@ -19,6 +19,8 @@ const main = async () => {
         switch(opt){
             case 1:
                 // Mostrar mensaje 
+                const lugar = await leerInput('Ciudad: ');
+                console.log(lugar);
 
                 // Buscar los lugares
 
@@ -28,6 +30,13 @@ const main = async () => {
 
                 // Mostrar Resultados
                 console.log('\nInformación de la Ciudad\n'.green);
+                console.log('Ciudad: ', );
+                console.log('Latitud: ', );
+                console.log('Longitud: ', );
+                console.log('Temperatura: ', );
+                console.log('Minima: ', );
+                console.log('Maxima: ', );
+
             break;
 
 
